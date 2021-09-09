@@ -30,6 +30,7 @@ if [ ! -d ~/anaconda3 ]; then
     conda update conda
     conda update anaconda
 fi
+conda init
 
 
 # Configure the conda environment
