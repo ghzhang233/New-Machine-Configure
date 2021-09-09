@@ -30,22 +30,24 @@ if [ ! -d ~/anaconda3 ]; then
     conda update conda
     conda update anaconda
 fi
-conda init
 
 
 # Configure the conda environment
 conda create -n gh_torch python=3.8 scikit-learn pandas tqdm nltk
+source ~/anaconda3/etc/profile.d/conda.sh
 conda activate gh_torch
 conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 conda deactivate
 
 conda create -n gh_tf2 python=3.8 scikit-learn pandas tqdm nltk
+source ~/anaconda3/etc/profile.d/conda.sh
 conda activate gh_tf2
 pip install --upgrade pip
 pip install tensorflow
 conda deactivate 
 
 conda create -n gh_tf1 python=3.8 scikit-learn pandas tqdm nltk
+source ~/anaconda3/etc/profile.d/conda.sh
 conda activate gh_tf1
 pip install --upgrade pip
 pip install tensorflow-gpu==1.15
