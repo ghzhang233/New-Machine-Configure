@@ -10,10 +10,12 @@ then
     echo 'if [ -f ~/.bash_aliases ]; then\n    . ~/.bash_aliases\nfi' >> ~/.bashrc
 fi
 
+
 # Configure the Vim
 git clone https://github.com/ghzhang233/Vim-Zarth.git ~/Vim-Zarth
 cd ~/Vim-Zarth
 bash run.sh
+
 
 # Configure the Anaconda
 cd ~
@@ -24,3 +26,20 @@ cd ~/anaconda3/bin
 srrc
 conda update conda
 conda update anaconda
+
+
+# Configure the conda environment
+conda create -n gh_torch python=3.8 scikit-learn pandas tqdm nltk
+conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+
+conda create -n gh_tf2 python=3.8 scikit-learn pandas tqdm nltk
+conda activate gh_tf2
+pip install --upgrade pip
+pip install tensorflow
+conda deactivate 
+
+conda create -n gh_tf1 python=3.8 scikit-learn pandas tqdm nltk
+conda activate gh_tf1
+pip install --upgrade pip
+pip install tensorflow-gpu==1.15
+conda deactivate 
