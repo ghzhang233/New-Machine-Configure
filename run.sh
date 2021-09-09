@@ -29,7 +29,7 @@ if [ ! -d ~/anaconda3 ]; then
     srrc
     conda update conda
     conda update anaconda
-else
+fi
 
 
 # Configure the conda environment
