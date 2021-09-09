@@ -12,9 +12,11 @@ fi
 
 
 # Configure the Vim
-git clone https://github.com/ghzhang233/Vim-Zarth.git ~/Vim-Zarth
-cd ~/Vim-Zarth
-bash run.sh
+if [ ! -d ~/Vim-Zarth ]; then
+    git clone https://github.com/ghzhang233/Vim-Zarth.git ~/Vim-Zarth
+    cd ~/Vim-Zarth
+    bash run.sh
+fi
 
 
 # Configure the Anaconda
