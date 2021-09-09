@@ -5,7 +5,7 @@ else
     cat ./.bash_aliases >> ~/.bash_aliases
 fi
 
-if ( ! grep ./.bash_aliases ~/.bashrc ) 
+if ( ! grep -q ./.bash_aliases ~/.bashrc ) 
 then
     echo 'if [ -f ~/.bash_aliases ]; then\n    . ~/.bash_aliases\nfi' >> ~/.bashrc
 fi
