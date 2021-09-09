@@ -7,7 +7,7 @@ fi
 
 if ( ! grep ./.bash_aliases ~/.bashrc ) 
 then
-    cat 'if [ -f ~/.bash_aliases ]; then\n    . ~/.bash_aliases\nfi'
+    cat 'if [ -f ~/.bash_aliases ]; then\n    . ~/.bash_aliases\nfi' >> ~/.bashrc
 fi
 
 # Configure the Vim
