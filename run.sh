@@ -18,7 +18,7 @@ bash run.sh
 
 
 # Configure the Anaconda
-if [ ! -f ~/anaconda3 ]; then
+if [ ! -d ~/anaconda3 ]; then
     cd ~
     wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
     bash Anaconda3-2021.05-Linux-x86_64.sh
