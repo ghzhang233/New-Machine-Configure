@@ -9,6 +9,7 @@ if ( ! grep -q ./.bash_aliases ~/.bashrc )
 then
     echo 'if [ -f ~/.bash_aliases ]; then\n    . ~/.bash_aliases\nfi' >> ~/.bashrc
 fi
+source ~/.bashrc
 
 
 # Configure the Vim
