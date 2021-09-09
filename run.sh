@@ -42,13 +42,11 @@ conda deactivate
 conda create -n gh_tf2 python=3.8 scikit-learn pandas tqdm nltk
 source ~/anaconda3/etc/profile.d/conda.sh
 conda activate gh_tf2
-pip install --upgrade pip
-pip install tensorflow
+conda install tensorflow-gpu
 conda deactivate 
 
 conda create -n gh_tf1 python=3.8 scikit-learn pandas tqdm nltk
 source ~/anaconda3/etc/profile.d/conda.sh
 conda activate gh_tf1
-pip install --upgrade pip
-pip install tensorflow-gpu==1.15
+conda install tensorflow-gpu=1.15
 conda deactivate 
