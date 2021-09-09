@@ -5,7 +5,7 @@
 
 alias clr="clear ; echo $STY ; ls"
 alias clrr="clear ; echo $STY ; ls -ralt"
-alias srrc="source .bashrc"
+alias srrc="source ~/.bashrc"
 
 openScreen(){
     if ( screen -ls | grep -i $1 )
