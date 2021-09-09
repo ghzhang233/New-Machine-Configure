@@ -33,20 +33,6 @@ fi
 
 
 # Configure the conda environment
-conda create -n gh_torch python=3.8 scikit-learn pandas tqdm nltk
-source ~/anaconda3/etc/profile.d/conda.sh
-conda activate gh_torch
-conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
-conda deactivate
-
-conda create -n gh_tf2 python=3.8 scikit-learn pandas tqdm nltk
-source ~/anaconda3/etc/profile.d/conda.sh
-conda activate gh_tf2
-conda install tensorflow-gpu
-conda deactivate 
-
-conda create -n gh_tf1 python=3.8 scikit-learn pandas tqdm nltk
-source ~/anaconda3/etc/profile.d/conda.sh
-conda activate gh_tf1
-conda install tensorflow-gpu=1.15
-conda deactivate 
+conda create -n gh_torch python scikit-learn pandas tqdm nltk ipython pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+conda create -n gh_tf2 python scikit-learn pandas tqdm nltk tensorflow-gpu ipython
+conda create -n gh_tf1 python scikit-learn pandas tqdm nltk tensorflow-gpu=1.15 ipython
