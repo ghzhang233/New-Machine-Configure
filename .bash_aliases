@@ -7,6 +7,11 @@ alias clr="clear ; echo $STY ; ls"
 alias clrr="clear ; echo $STY ; ls -ralt"
 alias srrc="source ~/.bashrc"
 
+alias ghtf1="conda activate gh_tf1"
+alias ghtf2="conda activate gh_tf2"
+alias ghtc="conda activate gh_torch"
+alias ghdc="conda deactivate"
+
 openScreen(){
     if ( screen -ls | grep -i $1 )
     then
