@@ -18,19 +18,23 @@ bash run.sh
 
 
 # Configure the Anaconda
-cd ~
-wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
-bash Anaconda3-2021.05-Linux-x86_64.sh
-cd ~/anaconda3/bin
-./conda init
-srrc
-conda update conda
-conda update anaconda
+if [ ! -f ~/anaconda3 ]; then
+    cd ~
+    wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
+    bash Anaconda3-2021.05-Linux-x86_64.sh
+    cd ~/anaconda3/bin
+    ./conda init
+    srrc
+    conda update conda
+    conda update anaconda
+else
 
 
 # Configure the conda environment
 conda create -n gh_torch python=3.8 scikit-learn pandas tqdm nltk
+conda activate gh_torch
 conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+conda deactivate
 
 conda create -n gh_tf2 python=3.8 scikit-learn pandas tqdm nltk
 conda activate gh_tf2
