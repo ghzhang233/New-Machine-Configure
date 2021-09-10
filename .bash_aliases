@@ -27,11 +27,11 @@ alias gh1="openScreen gh1"
 alias gh2="openScreen gh2"
 alias gh3="openScreen gh3"
 alias gh4="openScreen gh4"
-alias gh5="openScreen gh4"
-alias gh6="openScreen gh0"
-alias gh7="openScreen gh0"
-alias gh8="openScreen gh0"
-alias gh9="openScreen gh0"
+alias gh5="openScreen gh5"
+alias gh6="openScreen gh6"
+alias gh7="openScreen gh7"
+alias gh8="openScreen gh8"
+alias gh9="openScreen gh9"
 
 ########################################################################
 # End of aliases by ghzhang
