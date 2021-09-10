@@ -6,6 +6,7 @@
 alias clr="clear ; echo $STY ; ls"
 alias clrr="clear ; echo $STY ; ls -ralt"
 alias srrc="source ~/.bashrc"
+alias nvi="nvidia-smi"
 
 alias ghtf1="conda activate gh_tf1"
 alias ghtf2="conda activate gh_tf2"

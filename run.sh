@@ -34,6 +34,6 @@ fi
 
 
 # Configure the conda environment
-conda create -n gh_torch python scikit-learn pandas tqdm nltk ipython pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
-conda create -n gh_tf2 python scikit-learn pandas tqdm nltk tensorflow-gpu ipython
-conda create -n gh_tf1 python scikit-learn pandas tqdm nltk tensorflow-gpu=1.15 ipython
+conda create -n gh_torch python scikit-learn pandas matplotlib tqdm nltk ipython pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+conda create -n gh_tf2 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu ipython
+conda create -n gh_tf1 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu=1.15 ipython
