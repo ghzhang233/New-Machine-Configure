@@ -27,7 +27,7 @@ if [ ! -d ~/anaconda3 ]; then
     bash Anaconda3-2021.05-Linux-x86_64.sh
     cd ~/anaconda3/bin
     ./conda init
-    srrc
+    source ~/.bashrc
     conda update conda
     conda update anaconda
 fi
