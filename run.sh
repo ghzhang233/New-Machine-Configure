@@ -1,3 +1,7 @@
+# Configure git
+git config --global user.name ghzhang
+git config --global user.email ghzhang233@outlook.com
+
 # Configure the aliases
 if [ ! -f .bash_aliases ]; then
     cp ./.bash_aliases ~/.
@@ -34,6 +38,6 @@ fi
 
 
 # Configure the conda environment
-conda create -n gh_torch python scikit-learn pandas matplotlib tqdm nltk ipython pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
-conda create -n gh_tf2 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu ipython
-conda create -n gh_tf1 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu=1.15 ipython
+conda create -n gh_torch python scikit-learn pandas matplotlib tqdm nltk ipython gitpython pytorch torchvision torchaudio torchtext cudatoolkit=10.2 -c pytorch
+conda create -n gh_tf2 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu ipython gitpython
+conda create -n gh_tf1 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu=1.15 ipython gitpython
