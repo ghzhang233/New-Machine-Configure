@@ -36,8 +36,8 @@ if [ ! -d ~/anaconda3 ]; then
 fi
 
 
-cd ~/anaconda3/bin
 # Configure the conda environment
+cd ~/anaconda3/bin
 ./conda install zip unzip
 ./conda create -n gh_torch python scikit-learn pandas matplotlib tqdm nltk ipython gitpython pytorch torchvision torchaudio torchtext cudatoolkit=10.2 -c pytorch
 ./conda create -n gh_tf2 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu ipython gitpython
