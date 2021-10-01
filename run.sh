@@ -31,13 +31,14 @@ if [ ! -d ~/anaconda3 ]; then
     bash Anaconda3-2021.05-Linux-x86_64.sh
     cd ~/anaconda3/bin
     ./conda init
-    conda update conda
-    conda update anaconda
+    ./conda update conda
+    ./conda update anaconda
 fi
 
 
 cd ~/anaconda3/bin
 # Configure the conda environment
-conda create -n gh_torch python scikit-learn pandas matplotlib tqdm nltk ipython gitpython pytorch torchvision torchaudio torchtext cudatoolkit=10.2 -c pytorch
-conda create -n gh_tf2 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu ipython gitpython
-conda create -n gh_tf1 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu=1.15 ipython gitpython
+./conda install zip unzip
+./conda create -n gh_torch python scikit-learn pandas matplotlib tqdm nltk ipython gitpython pytorch torchvision torchaudio torchtext cudatoolkit=10.2 -c pytorch
+./conda create -n gh_tf2 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu ipython gitpython
+./conda create -n gh_tf1 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu=1.15 ipython gitpython
