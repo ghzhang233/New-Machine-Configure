@@ -1,5 +1,5 @@
 This is the configure script for new machines to adjust it to my working habit.
-To use this, you should firstly run the following code and add the public key to [GitHub](https://github.com/settings/ssh/new). After that, run *run.sh* to finish remaining configurations.
+To use this, you should firstly run the following code and add the public key to [GitHub](https://github.com/settings/ssh/new). After that, clone this repo to your machine and run *run.sh* to finish remaining configurations.
 
 ```
 if [ ! -f ~/.ssh/id_rsa.pub ]; then
