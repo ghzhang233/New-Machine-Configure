@@ -11,7 +11,7 @@ fi
 
 if ( ! grep -q ./.bash_aliases ~/.bashrc ) 
 then
-    echo 'if [ -f ~/.bash_aliases ]; then\n    . ~/.bash_aliases\nfi' >> ~/.bashrc
+    echo 'if [ -f ~/.bash_aliases ]; then . ~/.bash_aliases ; fi' >> ~/.bashrc
 fi
 source ~/.bashrc
 
