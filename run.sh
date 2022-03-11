@@ -1,44 +1,71 @@
+echo -n "Enter your home directory: "
+read path_home
+
 # Configure git
-git config --global user.name ghzhang
-git config --global user.email ghzhang233@outlook.com
-
-# Configure the aliases
-if [ ! -f ~/.gh_aliases ]; then
-    cp ./.gh_aliases ~/.
-else
-    cat ./.gh_aliases >> ~/.gh_aliases
+echo -n "Do you want to configure git? (y/n)"
+read response
+if [ "$response" = "y" ]; then
+    git config --global user.name ghzhang
+    git config --global user.email ghzhang233@outlook.com
 fi
 
-if ( ! grep -q ~/.gh_aliases ~/.bashrc ) 
-then
-    echo 'if [ -f ~/.gh_aliases ]; then . ~/.gh_aliases ; fi' >> ~/.bashrc
+# Configure the alias
+echo -n "Do you want to configure alias? (y/n) "
+read response
+if [ "$response" = "y" ]; then
+
+    # Configure the aliases
+    if [ ! -f ${path_home}/.gh_aliases ]; then
+        cp ./.gh_aliases ${path_home}/.
+    else
+        cat ./.gh_aliases >> ${path_home}/.gh_aliases
+    fi
+
+    if ( ! grep -q ${path_home}/.gh_aliases ~/.bashrc )
+    then
+        echo 'if [ -f ${path_home}/.gh_aliases ]; then . ${path_home}/.gh_aliases ; fi' >> ~/.bashrc
+    fi
+    source ~/.bashrc
 fi
-source ~/.bashrc
 
 
 # Configure the Vim
-if [ ! -d ~/Vim-Zarth ]; then
-    git clone https://github.com/ghzhang233/Vim-Zarth.git ~/Vim-Zarth
-    cd ~/Vim-Zarth
-    bash run.sh
+echo -n "Do you want to configure Vim? (y/n) "
+read response
+if [ "$response" = "y" ]; then
+    if [ ! -d ${path_home}/Vim-Zarth ]; then
+        git clone https://github.com/ghzhang233/Vim-Zarth.git ${path_home}/Vim-Zarth
+        cd ${path_home}/Vim-Zarth
+        bash run.sh
+    fi
 fi
 
 
 # Configure the Anaconda
-if [ ! -d ~/anaconda3 ]; then
-    cd ~
-    wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
-    bash Anaconda3-2021.05-Linux-x86_64.sh
-    cd ~/anaconda3/bin
-    ./conda init
-    ./conda update conda
-    ./conda update anaconda
+echo -n "Do you want to configure Anaconda? (y/n) "
+read response
+if [ "$response" = "y" ]; then
+    if [ ! -d ${path_home}/anaconda3 ]; then
+        cd ${path_home}
+        wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
+        bash Anaconda3-2021.05-Linux-x86_64.sh
+        cd ${path_home}/anaconda3/bin
+        ./conda init
+        ./conda update conda
+        ./conda update anaconda
+    fi
 fi
 
 
 # Configure the conda environment
-cd ~/anaconda3/bin
-./conda install zip unzip
-./conda create -n gh_torch python scikit-learn pandas matplotlib tqdm nltk ipython gitpython pytorch torchvision torchaudio torchtext cudatoolkit=10.2 -c pytorch
-./conda create -n gh_tf2 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu ipython gitpython
-./conda create -n gh_tf1 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu=1.15 ipython gitpython
+echo -n "Do you want to configure widely-used Python environments? (y/n) "
+read response
+if [ "$response" = "y" ]; then
+    echo -n "Enter your path to conda: "
+    read path_to_conda
+    cd ${path_to_conda}/bin
+    ./conda install zip unzip
+    ./conda create -n gh_torch python scikit-learn pandas matplotlib tqdm nltk ipython gitpython pytorch torchvision torchaudio torchtext cudatoolkit=10.2 -c pytorch
+    ./conda create -n gh_tf2 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu ipython gitpython
+    ./conda create -n gh_tf1 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu=1.15 ipython gitpython
+fi
