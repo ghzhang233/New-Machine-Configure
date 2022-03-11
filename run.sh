@@ -1,3 +1,5 @@
+echo -n "Enter your aka: "
+read aka
 echo -n "Enter your home directory: "
 read path_home
 
@@ -5,8 +7,12 @@ read path_home
 echo -n "Do you want to configure git? (y/n)"
 read response
 if [ "$response" = "y" ]; then
-    git config --global user.name ghzhang
-    git config --global user.email ghzhang233@outlook.com
+    echo "Enter your git user.name: "
+    read user_name
+    git config --global user.name ${user_name}
+    echo "Enter your git user.email: "
+    read user_email
+    git config --global user.email ${user_email}
 fi
 
 # Configure the alias
@@ -15,15 +21,15 @@ read response
 if [ "$response" = "y" ]; then
 
     # Configure the aliases
-    if [ ! -f ${path_home}/.gh_aliases ]; then
-        cp ./.gh_aliases ${path_home}/.
+    if [ ! -f ${path_home}/.${aka}_aliases ]; then
+        cp ./.${aka}_aliases ${path_home}/.
     else
-        cat ./.gh_aliases >> ${path_home}/.gh_aliases
+        cat ./.${aka}_aliases >> ${path_home}/.${aka}_aliases
     fi
 
-    if ( ! grep -q ${path_home}/.gh_aliases ~/.bashrc )
+    if ( ! grep -q ${path_home}/.${aka}_aliases ~/.bashrc )
     then
-        echo 'if [ -f ${path_home}/.gh_aliases ]; then . ${path_home}/.gh_aliases ; fi' >> ~/.bashrc
+        echo 'if [ -f ${path_home}/.${aka}_aliases ]; then . ${path_home}/.${aka}_aliases ; fi' >> ~/.bashrc
     fi
     source ~/.bashrc
 fi
@@ -34,7 +40,7 @@ echo -n "Do you want to configure Vim? (y/n) "
 read response
 if [ "$response" = "y" ]; then
     if [ ! -d ${path_home}/Vim-Zarth ]; then
-        git clone https://github.com/ghzhang233/Vim-Zarth.git ${path_home}/Vim-Zarth
+        git clone https://github.com/${aka}zhang233/Vim-Zarth.git ${path_home}/Vim-Zarth
         cd ${path_home}/Vim-Zarth
         bash run.sh
     fi
@@ -65,7 +71,7 @@ if [ "$response" = "y" ]; then
     read path_to_conda
     cd ${path_to_conda}/bin
     ./conda install zip unzip
-    ./conda create -n gh_torch python scikit-learn pandas matplotlib tqdm nltk ipython gitpython pytorch torchvision torchaudio torchtext cudatoolkit=10.2 -c pytorch
-    ./conda create -n gh_tf2 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu ipython gitpython
-    ./conda create -n gh_tf1 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu=1.15 ipython gitpython
+    ./conda create -n ${aka}_torch python scikit-learn pandas matplotlib tqdm nltk ipython gitpython pytorch torchvision torchaudio torchtext cudatoolkit=10.2 -c pytorch
+    ./conda create -n ${aka}_tf2 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu ipython gitpython
+    ./conda create -n ${aka}_tf1 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu=1.15 ipython gitpython
 fi
