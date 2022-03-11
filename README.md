@@ -7,3 +7,11 @@ if [ ! -f ~/.ssh/id_rsa.pub ]; then
     cat ~/.ssh/id_rsa.pub
 fi
 ```
+Or you may use 
+```
+if [ ! -f path_to_your_id_rsa.pub ]; then
+    ssh-keygen -t rsa -C ghzhang233@outlook.com -f path_to_your_id_rsa
+    ssh-add path_to_your_id_rsa
+    cat path_to_your_id_rsa
+fi
+```
