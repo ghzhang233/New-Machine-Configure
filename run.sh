@@ -3,13 +3,13 @@ git config --global user.name ghzhang
 git config --global user.email ghzhang233@outlook.com
 
 # Configure the aliases
-if [ ! -f .bash_aliases ]; then
+if [ ! -f ~/.bash_aliases ]; then
     cp ./.bash_aliases ~/.
 else
     cat ./.bash_aliases >> ~/.bash_aliases
 fi
 
-if ( ! grep -q ./.bash_aliases ~/.bashrc ) 
+if ( ! grep -q ~/.bash_aliases ~/.bashrc ) 
 then
     echo 'if [ -f ~/.bash_aliases ]; then . ~/.bash_aliases ; fi' >> ~/.bashrc
 fi
