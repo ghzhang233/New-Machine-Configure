@@ -67,7 +67,7 @@ fi
 echo -n "Do you want to configure widely-used Python environments? (y/n) "
 read response
 if [ "$response" = "y" ]; then
-    echo -n "Enter your path to conda: "
+    echo -n "Enter your path to conda (e.g. /home/username/anaconda3): "
     read path_to_conda
     cd ${path_to_conda}/bin
     ./conda install zip unzip
