@@ -29,7 +29,7 @@ if [ "$response" = "y" ]; then
 
     if ( ! grep -q ${path_home}/.${aka}_aliases ~/.bashrc )
     then
-        echo 'if [ -f ${path_home}/.${aka}_aliases ]; then . ${path_home}/.${aka}_aliases ; fi' >> ~/.bashrc
+        echo "if [ -f ${path_home}/.${aka}_aliases ]; then . ${path_home}/.${aka}_aliases ; fi" >> ~/.bashrc
     fi
     source ~/.bashrc
 fi
