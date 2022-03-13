@@ -1,6 +1,6 @@
-echo -n "Enter your aka: "
+echo -n "Enter your aka (e.g. zarth): "
 read aka
-echo -n "Enter your home directory: "
+echo -n "Enter your home directory (e.g. /home/username): "
 read path_home
 
 # Configure git
