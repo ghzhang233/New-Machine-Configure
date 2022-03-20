@@ -71,7 +71,7 @@ if [ "$response" = "y" ]; then
     read path_to_conda
     cd ${path_to_conda}/bin
     ./conda install zip unzip
-    ./conda create -n ${aka}_torch python scikit-learn pandas matplotlib tqdm nltk ipython gitpython pytorch torchvision torchaudio torchtext transformers cudatoolkit=10.2 -c pytorch
+    ./conda create -n ${aka}_torch python scikit-learn pandas matplotlib tqdm nltk ipython gitpython pytorch=1.10.0 torchvision torchaudio torchtext transformers cudatoolkit=11.3 -c pytorch
     ./conda create -n ${aka}_tf2 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu ipython gitpython
     ./conda create -n ${aka}_tf1 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu=1.15 ipython gitpython
 fi
