@@ -3,8 +3,25 @@ read aka
 echo -n "Enter your home directory (e.g. /home/username): "
 read path_home
 
+# Configure ssh
+echo -n "Do you want to configure ssh? (y/n) "
+read response
+if [ "$response" = "y" ]; then
+    if [ ! -d "${path_home}/.ssh" ]; then
+        mkdir ${path_home}/.ssh
+    fi
+    path_to_your_id_rsa="${path_home}/.ssh/id_rsa"
+    echo -n "Enter your email (e.g. youremail@domain.com) "
+    read your_email
+    if [ ! -f ${path_to_your_id_rsa}.pub ]; then
+        ssh-keygen -t rsa -C ${your_email} -f ${path_to_your_id_rsa}
+        ssh-add ${path_to_your_id_rsa}
+        cat ${path_to_your_id_rsa}.pub
+    fi
+fi
+
 # Configure git
-echo -n "Do you want to configure git? (y/n)"
+echo -n "Do you want to configure git? (y/n) "
 read response
 if [ "$response" = "y" ]; then
     echo "Enter your git user.name: "
