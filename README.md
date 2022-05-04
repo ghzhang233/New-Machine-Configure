@@ -1,4 +1,7 @@
-This is the configure script for new machines to adjust it to my working habit.
+This is the configure script for new machines to adjust it to my working habit. Just use the following command and follow the instructions.
+```
+bash run.sh
+```
 
 ## Optional
 To configure Github, you should firstly run the following code and add the public key to [GitHub](https://github.com/settings/ssh/new). After that, clone this repo to your machine and run *run.sh* to finish remaining configurations.
