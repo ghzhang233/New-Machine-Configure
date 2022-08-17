@@ -19,7 +19,7 @@ killpython() {
     echo "ps | grep python | awk '{print \$1}' | xargs kill"
 }
 fn() {
-    find ./* -name "*${1}*"
+    find . -name "*${1}*"
 }
 openScreen(){
     if ( screen -ls | grep -i $1 )
