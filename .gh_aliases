@@ -41,6 +41,8 @@ alias gh7="openScreen gh7"
 alias gh8="openScreen gh8"
 alias gh9="openScreen gh9"
 
+alias "rm"="sh $HOME/.remove.sh"
+
 ########################################################################
 # End of aliases by ghzhang
 ########################################################################
