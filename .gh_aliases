@@ -4,7 +4,7 @@
 ########################################################################
 
 alias clr="clear ; echo $STY ; ls"
-alias clrr="clear ; echo $STY ; ls -ralt"
+alias clrr="clear ; echo $STY ; ls -ralth"
 alias srrc="source ~/.bashrc"
 alias nvi="nvidia-smi"
 alias edbrc="vim ~/.gh_aliases"
