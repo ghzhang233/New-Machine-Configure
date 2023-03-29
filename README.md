@@ -9,8 +9,8 @@ To configure Github, you should firstly run the following code and add the publi
 ```
 if [ ! -f ~/.ssh/id_rsa.pub ]; then
     ssh-keygen -t rsa -C youremail@domain.com
-    cat ~/.ssh/id_rsa.pub
 fi
+cat ~/.ssh/id_rsa.pub
 ```
 Or you may use 
 ```
@@ -19,6 +19,6 @@ your_email="youremail@domain.com"
 if [ ! -f ${path_to_your_id_rsa}.pub ]; then
     ssh-keygen -t rsa -C ${your_email} -f ${path_to_your_id_rsa}
     ssh-add ${path_to_your_id_rsa}
-    cat ${path_to_your_id_rsa}.pub
 fi
+cat ${path_to_your_id_rsa}.pub
 ```
