@@ -1,4 +1,4 @@
-TRASH_DIR="$HOME/.my_trash"
+TRASH_DIR="$GH_HOME/.my_trash"
 if [ ! -d $TRASH_DIR  ]; then    
     mkdir $TRASH_DIR
 fi

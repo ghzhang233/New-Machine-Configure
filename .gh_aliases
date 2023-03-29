@@ -7,8 +7,8 @@ alias clr="clear ; echo $STY ; ls"
 alias clrr="clear ; echo $STY ; ls -ralth"
 alias srrc="source ~/.bashrc"
 alias nvi="nvidia-smi"
-alias edbrc="vim ~/.gh_aliases"
-alias ghdir="cd ~"
+alias edbrc="vim $GH_HOME/.gh_aliases"
+alias ghdir="cd $GH_HOME"
 
 alias ghtf1="conda activate gh_tf1"
 alias ghtf2="conda activate gh_tf2"
@@ -41,7 +41,7 @@ alias gh7="openScreen gh7"
 alias gh8="openScreen gh8"
 alias gh9="openScreen gh9"
 
-alias "rm"="sh $HOME/.remove.sh"
+alias "rm"="sh $GH_HOME/.remove.sh"
 
 ########################################################################
 # End of aliases by ghzhang
