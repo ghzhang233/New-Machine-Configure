@@ -15,6 +15,15 @@ alias ghtf2="conda activate gh_tf2"
 alias ghtc="conda activate gh_torch"
 alias ghdc="conda deactivate"
 
+alias sq="squeue"
+alias sac="salloc -N 1 --gres=gpu:1 -t 240"
+sb() {
+    sbatch ${1}
+}
+sc() {
+    scancel ${1}
+}
+
 killpython() {
     echo "ps | grep python | awk '{print \$1}' | xargs kill"
 }
