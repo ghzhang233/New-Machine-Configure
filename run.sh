@@ -76,7 +76,7 @@ fi
 echo -n "Do you want to configure Miniconda? (y/n) "
 read response
 if [ "$response" = "y" ]; then
-    if [ ! -d ${GH_HOME}/anaconda3 ]; then
+    if [ ! -d ${GH_HOME}/miniconda3 ]; then
         cd ${GH_HOME}
         wget -N https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
         bash Miniconda3-latest-Linux-x86_64.sh
@@ -91,7 +91,7 @@ fi
 echo -n "Do you want to configure widely-used Python environments? (y/n) "
 read response
 if [ "$response" = "y" ]; then
-    echo -n "Enter your path to conda (e.g. /home/username/anaconda3): "
+    echo -n "Enter your path to conda (e.g. /home/username/miniconda3): "
     read path_to_conda
     cd ${path_to_conda}/bin
     ./conda install zip unzip
