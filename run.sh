@@ -72,18 +72,16 @@ if [ "$response" = "y" ]; then
     echo "Done!"
 fi
 
-# Configure the Anaconda
-echo -n "Do you want to configure Anaconda? (y/n) "
+# Configure the Miniconda
+echo -n "Do you want to configure Miniconda? (y/n) "
 read response
 if [ "$response" = "y" ]; then
     if [ ! -d ${GH_HOME}/anaconda3 ]; then
         cd ${GH_HOME}
-        wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
-        bash Anaconda3-2021.05-Linux-x86_64.sh
-        cd ${GH_HOME}/anaconda3/bin
+        wget -N https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+        bash Miniconda3-latest-Linux-x86_64.sh
+        cd ${GH_HOME}/miniconda3/bin
         ./conda init
-        ./conda update conda
-        ./conda update anaconda
     fi
     echo "Done!"
 fi
