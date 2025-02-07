@@ -76,11 +76,11 @@ fi
 echo -n "Do you want to configure Miniconda? (y/n) "
 read response
 if [ "$response" = "y" ]; then
-    if [ ! -d ${GH_HOME}/miniconda3 ]; then
+    if [ ! -d ${GH_HOME}/miniforge3 ]; then
         cd ${GH_HOME}
-        wget -N https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-        bash Miniconda3-latest-Linux-x86_64.sh
-        cd ${GH_HOME}/miniconda3/bin
+        wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+        bash Miniforge3-$(uname)-$(uname -m).sh
+        cd ${GH_HOME}/miniforge3/bin
         ./conda init
     fi
     echo "Done!"
@@ -91,12 +91,10 @@ fi
 echo -n "Do you want to configure widely-used Python environments? (y/n) "
 read response
 if [ "$response" = "y" ]; then
-    echo -n "Enter your path to conda (e.g. /home/username/miniconda3): "
+    echo -n "Enter your path to conda (e.g. /home/username/miniforge3): "
     read path_to_conda
     cd ${path_to_conda}/bin
     ./conda install zip unzip
-    ./conda create -n gh_torch python scikit-learn pandas matplotlib tqdm nltk ipython gitpython pytorch=1.10.0 torchvision torchaudio torchtext transformers cudatoolkit=11.3 -c pytorch
-    ./conda create -n gh_tf2 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu ipython gitpython
-    ./conda create -n gh_tf1 python scikit-learn pandas matplotlib tqdm nltk tensorflow-gpu=1.15 ipython gitpython
+    ./conda create -n py3.10_torch2.5.1 python=3.10 scikit-learn pandas matplotlib tqdm nltk ipython gitpython pytorch=2.5.1 torchvision torchaudio torchtext transformers datasets jupyterlab tensorboard wandb -c pytorch
     echo "Done!"
 fi

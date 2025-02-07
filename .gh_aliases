@@ -1,4 +1,3 @@
-
 ########################################################################
 # This is the aliases created by ghzhang (ghzhang233@outlook.com)
 ########################################################################
@@ -7,12 +6,13 @@ alias clr="clear ; echo $STY ; ls"
 alias clrr="clear ; echo $STY ; ls -ralth"
 alias srrc="source ~/.bashrc"
 alias nvi="nvidia-smi"
-alias edbrc="vim $GH_HOME/.gh_aliases"
+alias edgls="vim $GH_HOME/.gh_aliases"
+alias edbrc="vim $GH_HOME/.bashrc"
 alias ghdir="cd $GH_HOME"
 
 alias ghtf1="conda activate gh_tf1"
 alias ghtf2="conda activate gh_tf2"
-alias ghtc="conda activate gh_torch"
+alias ghtc="conda activate py3.10_torch2.5.1"
 alias ghdc="conda deactivate"
 
 alias sq="squeue"
@@ -55,4 +55,3 @@ alias "rm"="sh $GH_HOME/.remove.sh"
 ########################################################################
 # End of aliases by ghzhang
 ########################################################################
-
